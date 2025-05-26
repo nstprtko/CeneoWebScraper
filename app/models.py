@@ -6,7 +6,7 @@ import pandas as pd
 import os
 from matplotlib import pyplot as plt
 class Product:
-    def __init__(self, product_id, product_name, opinions, stats):
+    def __init__(self, product_id, product_name="", opinions=[], stats=[]):
         self.product_id = product_id
         self.product_name = product_name
         self.opinions = opinions
@@ -106,6 +106,5 @@ class Opinion:
     
     def to_dict(self):
         return {key: {getattr(self.key)for key in self.selectors.keys()}
-        
-        
-        
+
+
