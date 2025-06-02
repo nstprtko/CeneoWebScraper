@@ -19,6 +19,12 @@ def extract():
     if form.validate():
         product_id = form.product_id.data
         product = Product(product_id)
+        product.extract_name()
+        product.extract_opinions()
+        product.calculate_stats()
+        product.generate_charts()
+        print(product)
+        product.save_info()
         return redirect(url_for('product',product_id=product_id))
     else:
         return render_template("extract.html", form=form)
