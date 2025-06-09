@@ -105,6 +105,6 @@ class Opinion:
         return "Opinion("+", ".join([f"{key}: {getattr(self.key)}"for key in self.selectors.keys()])+")"
     
     def to_dict(self):
-        return {key: {getattr(self.key)for key in self.selectors.keys()}
+        return {key: getattr(self.key)for key in self.selectors.keys()}
 
 
